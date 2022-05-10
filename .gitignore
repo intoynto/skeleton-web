@@ -1,0 +1,50 @@
+# Composer dependencies
+vendor/
+composer.lock
+
+# js directories
+node_modules/
+jspm_packages/
+
+# yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+yarn.lock
+yarn-error.log
+
+# Gatsby files
+.cache/
+
+
+# aplication un tracking
+dist
+_cache
+_data
+_designs
+_server_install
+_server_remote
+
+assets/css
+assets/js
+assets/manifest.json
+
+arsip/_backup_db/**
+arsip/dokumen/**
+
+public/_cache/**
+
+public/arsip/_backup_db
+public/arsip/2021/**
+public/arsip/2022/**
+
+public/arsip/dokumen/**
+public/assets/cmnts
+public/assets/css
+public/assets/js
+public/assets/workers
+public/assets/assets.rar
+public/assets/assets.zip
+public/assets/manifest.json

@@ -1,0 +1,11 @@
+{% extends "layouts/base.web.twig" %}
+
+{% block root %}
+    <div id="root">        
+        {% include "designs/components.twig" %}
+    </div>
+{% endblock %}
+
+{% block footer_asset_js_next %}
+    {% webpack_js "web.home" %}
+{% endblock %}

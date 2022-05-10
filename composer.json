@@ -1,0 +1,20 @@
+{
+    "name": "dieto/1051-sidalev",
+    "autoload": {
+        "psr-4": {
+            "Bappeda\\Sidalev\\": "app/",
+            "App\\":"app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "intoynto",
+            "email": "intoynto@gmail.com"
+        }
+    ],
+    "require": {
+        "php":">=7.4",
+        "phpmailer/phpmailer": "^6.6",
+        "intoy/hebat-app": "^0.4.6"
+    }
+}

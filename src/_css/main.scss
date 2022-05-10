@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+
+@import "~intoy-select/src/_select.scss"; // select style from node modules
+
+@import "./inputs"; // inputs style
+@import "./starts";
