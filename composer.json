@@ -1,5 +1,5 @@
 {
-    "name": "dieto/1051-sidalev",
+    "name": "skeleton-web",
     "autoload": {
         "psr-4": {
             "Bappeda\\Sidalev\\": "app/",
