@@ -5,7 +5,7 @@ return [
         'driver' =>'pgsql',
         "host" => "localhost",
         'port' => 5432,
-        'database' => 'dbmon3v',
+        'database' => 'skeleton_php',
         'username' => 'postgres',
         'password' => '12345678',
         'charset' => 'utf8', // MySQL = utf8mb4 , Postgres = utf8
@@ -28,7 +28,7 @@ return [
         'driver' =>'mysql',
         "host" => "localhost",
         'port' => 3306,
-        'database' => 'dbmon3v',
+        'database' => 'skeleton_php',
         'username' => 'root',
         'password' => null,
         'charset' => 'utf8mb4', // MySQL = utf8mb4 , Postgres = utf8

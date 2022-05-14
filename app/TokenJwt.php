@@ -13,23 +13,15 @@ class TokenJwt
     const F_AUD='aud';
     const F_IIS="iis";
     const F_JTI='jti';
-    const SECRET_KEY="hebat@sidalev";
+    const SECRET_KEY="hebat@skeleton-php";
     const SECRET_ALG='HS256';
     const SECRET_AUD="Hebat@corps";
 
-    /**
-     * 75 - Provinsi
-     * 7501 - Kab Gorontalo
-     * 7502 - Boalemo
-     * 7503 - Bone Bolango
-     * 7504 - Pohuwato
-     * 7505 - Gorontalo Utara
-     * 7571 - Kota Gorontalo
-     * 
+    /**    
      * Merubah cookie harus build kembali js
      */
     
-    const JWT_COOKIE="sidalev-75";
+    const JWT_COOKIE="skeleton-php";
 
     public static function getCookieName()
     {

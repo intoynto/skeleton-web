@@ -3,13 +3,12 @@ declare (strict_types=1);
 
 namespace App;
 
-use App\Models\User;
-use App\Models\LogLoginModel as LogLogin;
+use App\Models\UserModel as UM;
 
 class Auth 
 {
     /**
-     * @var User
+     * @var UM
      */
     protected static $user=null;
 
@@ -21,7 +20,7 @@ class Auth
     protected const passwordOptions=[
         'cost' => 10,
         'author'=>'hebat@corps',
-        "app"=>"hebat-e-monep",
+        "app"=>"hebat-skeleton-php",
     ];
 
     /**
@@ -43,18 +42,18 @@ class Auth
     /**
      * @param string $username
      * @param string $password
-     * @return User|bool 
+     * @return UM|bool 
      */
     public static function attempt($username,$password)
     {
         $username=trim((string)$username);
-        $f_username=User::F_USERNAME;
-        $f_password=User::F_PASSWORD;
+        $f_username=UM::F_USERNAME;
+        $f_password=UM::F_PASSWORD;
 
-        $mod=new User();
+        $mod=new UM();
         [$table,$fields]=$mod->getTableOrView();
 
-        $builder=User::connection()->query()->select($fields)->from($table)->where($f_username,'=',$username)->take(1);
+        $builder=UM::connection()->query()->select($fields)->from($table)->where($f_username,'=',$username)->take(1);
 
         if(!$builder->exists()) 
         {
@@ -80,13 +79,13 @@ class Auth
      */
     public static function userAttempJWT($id_user, $jwt_key)
     {
-        $f_username=User::F_USERNAME;
-        $f_password=User::F_PASSWORD;
+        $f_username=UM::F_USERNAME;
+        $f_password=UM::F_PASSWORD;
 
-        $mod=new User();
+        $mod=new UM();
         [$table,$fields]=$mod->getTableOrView();
 
-        $builder=User::connection()->query()->select($fields)->from($table)->where(compact('id_user', 'jwt_key'))->take(1);
+        $builder=UM::connection()->query()->select($fields)->from($table)->where(compact('id_user', 'jwt_key'))->take(1);
 
         if(!$builder->exists()) 
         {
@@ -194,16 +193,11 @@ class Auth
      */
     public static function rekamUserLogin($id_user, $ip)
     {
-        $f_id=User::F_ID;
+        $f_id=UM::F_ID;
         $last_login=date("Y-m-d H:i:s");
 
         // update user info
-        User::where($f_id,"=",$id_user)->take(1)->update(compact("last_login"));
-
-        // update log
-        $tanggal=$last_login;
-        $status_login=1;
-        LogLogin::create(compact("id_user","ip","tanggal","status_login"));
+        UM::where($f_id,"=",$id_user)->take(1)->update(compact("last_login"));
     }
 
 
@@ -216,13 +210,8 @@ class Auth
      */
     public static function rekamUserLogout($id_user, $ip)
     {
-        $f_id=User::F_ID;
+        $f_id=UM::F_ID;
         $last_login=date("Y-m-d H:i:s");
-        User::where($f_id,"=",$id_user)->take(1)->update(compact("last_login"));
-
-        // update log
-        $tanggal=$last_login;
-        $status_login=0;
-        LogLogin::create(compact("id_user","ip","tanggal","status_login"));
+        UM::where($f_id,"=",$id_user)->take(1)->update(compact("last_login"));
     }
 }
