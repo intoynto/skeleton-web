@@ -1,8 +1,7 @@
 {
-    "name": "skeleton-web",
+    "name": "skeleton/web",
     "autoload": {
-        "psr-4": {
-            "Bappeda\\Sidalev\\": "app/",
+        "psr-4": {           
             "App\\":"app/"
         }
     },
